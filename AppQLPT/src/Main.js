@@ -1,73 +1,64 @@
-import React, { Component } from "react";
-import { View, StyleSheet } from "react-native";
-// import ShowText from './components/ShowText';
-import Child from "./components/Child";
-import ButtonComp from "./components/Button";
-import * as actions from "./actions";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import Child from './components/Child';
+import * as actions from './actions';
+import { connect } from 'react-redux';
 
 class Main extends Component {
-  handleIncrease = () => {
-    this.props.counterIncrease();
-  };
+    handleIncrease(){
+        //console.log('counterIncrease');
+        this.props.counterIncrease();
+    };
 
-  handleDecrease = () => {
-    this.props.counterDecrease();
-  };
+    handleDecrease(){
+        this.props.counterDecrease();
+        //console.log('counterDecrease')
+    };
+    render() {
+        return (
+            <View style={{
+                flex: 1,
+                width: '100%',
+                justifyContent: 'center'
+            }}
+            >
+                <View style={{
+                    flex: 1,
+                    justifyContent: "center",
+                    alignItems: "center"
+                }}>
+                    <Child />
+                </View>
+                <View style={{ flex: 1 }}>
+                    <TouchableOpacity style={{ backgroundColor: 'yellow', height: 100, justifyContent: 'center', alignItems: 'center' }}
+                        onPress={() => { this.handleIncrease() }}>
+                        <Text style={{ fontSize: 20, color: 'black' }}>Increase</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={{ backgroundColor: 'green', height: 100, justifyContent: 'center', alignItems: 'center' }}
+                        onPress={() => { this.handleDecrease() }}>
+                        <Text style={{ fontSize: 20, color: 'black' }}>Decrease</Text>
+                    </TouchableOpacity>
+                </View>
 
-  render() {
-    return (
-      <View
-        style={{
-          flex: 1,
-          width: "100%",
-          justifyContent: "center"
-        }}
-      >
-        <View
-          style={{
-            flex: 1,
-            justifyContent: "center",
-            alignItems: "center"
-          }}
-        >
-          <Child />
-        </View>
-        <View style={{ flex: 1 }}>
-          <ButtonComp
-            title="Increase"
-            textColor="#000"
-            bgColor="#397af8"
-            onPress={this.handleIncrease}
-          />
-          <ButtonComp
-            title="Decrease"
-            bgColor="orange"
-            onPress={this.handleDecrease}
-          />
-        </View>
-      </View>
-    );
-  }
+            </View>
+        )
+    }
 }
-
-export default connect(
-  null,
-  actions
-)(Main);
+// export default Main;
+export default connect(null, actions)(Main);
 
 const styles = StyleSheet.create({
-  text: {
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "red"
-  },
-  btnStyle: {
-    width: 100,
-    height: 40,
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: "red",
-    backgroundColor: "#15c"
-  }
+    text: {
+        fontSize: 24,
+        fontWeight: "bold",
+        color: 'red'
+    },
+    btnStyle: {
+        width: 100,
+        height: 40,
+        borderWidth: 1,
+        borderStyle: 'solid',
+        borderColor: "red",
+        backgroundColor: "#15c"
+    },
 });

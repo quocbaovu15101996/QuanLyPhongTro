@@ -1,4 +1,4 @@
-import { INCREASE, DECREASE } from "./type";
+import {INCREASE, DECREASE} from './type';
 
-export const counterIncrease = () => ({ type: INCREASE });
-export const counterDecrease = () => ({ type: DECREASE });
+export const counterIncrease = () => ({type:INCREASE});
+export const counterDecrease = () => ({type:DECREASE});
