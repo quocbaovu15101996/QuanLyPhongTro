@@ -1,5 +1,5 @@
 import React from 'react';  
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import Main from './src/Main';
 import { Provider } from 'react-redux';
 import store from './src/store';
@@ -7,11 +7,9 @@ export default class App extends React.Component {
   
   render() {
     return (
-      <Provider store={store}>
         <View style={styles.container}>
-          <Main />
+          <Text>Screen App</Text>
         </View>
-      </Provider>
     );
   }
 }

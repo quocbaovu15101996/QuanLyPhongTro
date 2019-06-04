@@ -1,6 +1,5 @@
 import {combineReducers} from 'redux';
-import counterReducer from './counterReducer';
-
+import listMarkers from './listMarker';
 export default combineReducers({
-  counter:counterReducer
+  listMarkers
 });
