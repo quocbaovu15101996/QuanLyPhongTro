@@ -15,7 +15,7 @@ const HomeNavigator = createSwitchNavigator({
     Setting: { screen: SettingScreen }
 });
 const HomeRouters = createStackNavigator({
-    // HomeScreen: { screen: HomeScreen },
+    HomeScreen: { screen: HomeScreen },
     HomeNavigator,
 },
     {

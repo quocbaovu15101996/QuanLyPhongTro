@@ -23,18 +23,18 @@ class ThongKeScreen extends Component {
     }
 
     componentDidMount() {
-        firebase
-            .firestore()
-            .collection("CongViec")
-            .add({
-                name: 'ABC',
-            })
-            .then(() => {
-                alert("Thêm thành công");
-            })
-            .catch(error => {
-                console.log(error);
-            });
+        // firebase
+        //     .firestore()
+        //     .collection("CongViec")
+        //     .add({
+        //         name: 'ABC',
+        //     })
+        //     .then(() => {
+        //         alert("Thêm thành công");
+        //     })
+        //     .catch(error => {
+        //         console.log(error);
+        //     });
     }
     render() {
         return (
@@ -47,6 +47,7 @@ class ThongKeScreen extends Component {
             </View>
         );
     }
+    .0
 }
 
 export default connect(null, null)(ThongKeScreen);
