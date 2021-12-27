@@ -1,4 +1,34 @@
-import {LayoutRoot} from 'react-native-navigation';
+import {LayoutRoot, Navigation} from 'react-native-navigation';
+import { Screens } from '../../screens/Screens';
+
+const layoutAuthenticate: LayoutRoot = {
+  root: {
+    stack: {
+      id: "StackLogin",
+      children: [
+        {
+          component: {
+            name: Screens.Login,
+            options: {
+              topBar: {
+                visible: false,
+                height: 0,
+              },
+              statusBar: {
+                visible: false,
+                drawBehind: false,
+              },
+            },
+          },
+        },
+      ],
+    },
+  },
+};
+
+export function startLogin(): void {
+  Navigation.setRoot(layoutAuthenticate);
+}
 
 const layoutRoot: LayoutRoot = {
   root: {
@@ -54,4 +84,6 @@ const layoutRoot: LayoutRoot = {
   },
 };
 
-export {layoutRoot};
+export function startApp(): void {
+  Navigation.setRoot(layoutRoot);
+}

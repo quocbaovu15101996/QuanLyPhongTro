@@ -1,12 +1,12 @@
-import {Navigation} from 'react-native-navigation';
-import {layoutRoot} from './libs/navigation/Utils';
-import {registerScreens} from './screens';
+import { Navigation } from "react-native-navigation";
+import { startLogin } from "./libs/navigation/Utils";
+import { registerScreens } from "./screens";
 
 const start = () => {
   registerScreens();
   Navigation.events().registerAppLaunchedListener(() => {
-    Navigation.setRoot(layoutRoot);
+    startLogin();
   });
 };
 
-export {start};
+export { start };
