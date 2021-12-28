@@ -12,6 +12,8 @@ target 'QuanLyPhongTro' do
     :hermes_enabled => false
   )
 
+  pod 'FBSDKLoginKit'
+  
   target 'QuanLyPhongTroTests' do
     inherit! :complete
     # Pods for testing

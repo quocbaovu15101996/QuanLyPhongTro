@@ -9,14 +9,35 @@ import {
   SafeAreaView,
 } from "react-native";
 import FastImage from "react-native-fast-image";
+import { LoginOptions } from "../../components/login/LoginOptions";
 import TextField from "../../components/login/TextField";
 import { startApp } from "../../libs/navigation/Utils";
 import { textPrimary } from "../../styles/text.styles";
+import { AccessToken, LoginManager } from "react-native-fbsdk-next";
 
 const Login: FunctionComponent = () => {
   const onPressSignIn = () => {
     startApp();
   };
+
+  const onPressFacebook = async (): Promise<void> => {
+    try {
+      LoginManager.logOut();
+      const loginResult = await LoginManager.logInWithPermissions([
+        "email",
+        "public_profile",
+      ]);
+      if (loginResult.isCancelled) {
+        console.log("Login cancelled");
+      } else {
+        const user = await AccessToken.getCurrentAccessToken();
+        console.log(user);
+      }
+    } catch (e: any) {
+      console.log(e);
+    }
+  };
+
   return (
     <>
       <StatusBar translucent hidden={true} />
@@ -68,16 +89,7 @@ const Login: FunctionComponent = () => {
         </View>
         <View style={styles.footer}>
           <Text style={textPrimary}>Or Sign in with</Text>
-          <View style={{ flexDirection: "row" }}>
-            <View
-              style={{
-                height: 30,
-                width: 30,
-                borderRadius: 30,
-                backgroundColor: "white",
-              }}
-            />
-          </View>
+          <LoginOptions onPressFacebook={onPressFacebook} />
           <Text style={[textPrimary, styles.textSuggest]}>
             Don’t have an account yet?{" "}
             <Text style={[textPrimary, styles.textSignUp]}>SIGN UP</Text>
