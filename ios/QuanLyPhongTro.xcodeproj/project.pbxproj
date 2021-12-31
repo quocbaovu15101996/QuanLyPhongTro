@@ -11,6 +11,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		3862C574277F18C1009931E6 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 3862C573277F18C1009931E6 /* www */; };
 		38B7BC902775650000C8F5DD /* RCTCalendarModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B7BC8F2775650000C8F5DD /* RCTCalendarModule.m */; };
 		38B7BC912775650000C8F5DD /* RCTCalendarModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B7BC8F2775650000C8F5DD /* RCTCalendarModule.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -40,6 +41,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = QuanLyPhongTro/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = QuanLyPhongTro/main.m; sourceTree = "<group>"; };
 		1C6336E9FA67354E620406BE /* Pods-QuanLyPhongTro-QuanLyPhongTroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuanLyPhongTro-QuanLyPhongTroTests.release.xcconfig"; path = "Target Support Files/Pods-QuanLyPhongTro-QuanLyPhongTroTests/Pods-QuanLyPhongTro-QuanLyPhongTroTests.release.xcconfig"; sourceTree = "<group>"; };
+		3862C573277F18C1009931E6 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = QuanLyPhongTro/www; sourceTree = "<group>"; };
 		38B7BC8E2775647300C8F5DD /* RCTCalendarModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTCalendarModule.h; sourceTree = "<group>"; };
 		38B7BC8F2775650000C8F5DD /* RCTCalendarModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RCTCalendarModule.m; path = "#import <React/RCTCalendarModule.m"; sourceTree = "<group>"; };
 		57978807BE7DEEDABFFDCFF2 /* libPods-QuanLyPhongTro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuanLyPhongTro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +92,7 @@
 		13B07FAE1A68108700A75B9A /* QuanLyPhongTro */ = {
 			isa = PBXGroup;
 			children = (
+				3862C573277F18C1009931E6 /* www */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -248,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3862C574277F18C1009931E6 /* www in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);

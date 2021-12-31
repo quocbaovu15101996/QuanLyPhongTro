@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useEffect } from "react";
 import {
   StatusBar,
   Text,
@@ -7,6 +7,7 @@ import {
   Pressable,
   Platform,
   SafeAreaView,
+  DevSettings,
 } from "react-native";
 import FastImage from "react-native-fast-image";
 import { LoginOptions } from "../../components/login/LoginOptions";
@@ -14,9 +15,24 @@ import TextField from "../../components/login/TextField";
 import { startApp } from "../../libs/navigation/Utils";
 import { textPrimary } from "../../styles/text.styles";
 import { AccessToken, LoginManager } from "react-native-fbsdk-next";
+import { DataBase } from "../../libs/sqlite";
 
 const Login: FunctionComponent = () => {
-  const onPressSignIn = () => {
+  const createTable = () => {
+    DataBase.transaction((tx) => {
+      tx.executeSql(
+        "CREATE TABLE IF NOT EXISTS " +
+          "Rooms " +
+          "(ID INTEGER PRIMARY KEY AUTOINCREMENT, RoomName TEXT, Roomer TEXT);"
+      );
+    });
+  };
+
+  useEffect(() => {
+    createTable();
+  }, []);
+
+  const onPressSignIn = async () => {
     startApp();
   };
 
